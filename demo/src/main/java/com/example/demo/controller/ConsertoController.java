@@ -1,15 +1,24 @@
 package com.example.demo.controller;
 
+import com.example.demo.conserto.Conserto;
+import com.example.demo.conserto.ConsertoRepository;
+import com.example.demo.conserto.DadosCadastroConserto;
+import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("concertos")
+@RequestMapping("conserto")
 public class ConsertoController {
+    @Autowired
+    private ConsertoRepository repository;
     @PostMapping
-    public void cadastrar(@RequestBody String dados){
-        System.out.println(dados);
+    @Transactional
+    public void cadastrar(@RequestBody DadosCadastroConserto dados){
+
+        repository.save(new Conserto(dados));
     }
 }
