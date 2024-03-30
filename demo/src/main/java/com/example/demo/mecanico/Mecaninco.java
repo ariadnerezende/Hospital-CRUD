@@ -4,7 +4,7 @@ public class Mecaninco {
     private String nome;
     private Integer anosExperiencia;
 
-    public Mecaninco(DadosMecanico dados) {
+    public Mecaninco(DadosCadastroMecanico dados) {
         this.nome = dados.nome();
         this.anosExperiencia = dados.anosExperiencia();
     }
