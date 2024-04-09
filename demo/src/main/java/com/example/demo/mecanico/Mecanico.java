@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Mecanico {
     private String nome;
-    private Integer anosExperiencia;
+    private Integer anosexperiencia;
 
     public Mecanico(DadosCadastroMecanico dados) {
         this.nome = dados.nome();
-        this.anosExperiencia = dados.anosExperiencia();
+        this.anosexperiencia = dados.anosexperiencia();
     }
 }

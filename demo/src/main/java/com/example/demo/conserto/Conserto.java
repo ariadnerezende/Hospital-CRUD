@@ -19,16 +19,16 @@ public class Conserto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
-    private String dataEntrada;
-    private String dataSaida;
+    private String dataentrada;
+    private String datasaida;
     @Embedded
     private Mecanico mecanico;
     @Embedded
     private Veiculo veiculo;
 
     public Conserto(DadosCadastroConserto dados) {
-        this.dataEntrada = dados.dataEntrada();
-        this.dataSaida = dados.dataSaida();
+        this.dataentrada = dados.dataentrada();
+        this.datasaida = dados.datasaida();
         this.mecanico = new  Mecanico(dados.mecanico());
         this.veiculo = new Veiculo(dados.veiculo());
     }

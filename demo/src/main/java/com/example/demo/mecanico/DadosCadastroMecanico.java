@@ -1,4 +1,4 @@
 package com.example.demo.mecanico;
 
-public record DadosCadastroMecanico(String nome, Integer anosExperiencia) {
+public record DadosCadastroMecanico(String nome, Integer anosexperiencia) {
 }
