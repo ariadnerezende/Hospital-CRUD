@@ -11,5 +11,7 @@ public record DadosCadastroVeiculo(
         String modelo,
         @NotBlank
         @Pattern(regexp = "\\d{4}")
-        String ano) {
+        String ano,
+        String cor)
+{
 }
