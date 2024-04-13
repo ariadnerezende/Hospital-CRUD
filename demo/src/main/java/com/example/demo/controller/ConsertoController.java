@@ -7,6 +7,9 @@ import com.example.demo.conserto.DadosListagemConserto;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,8 +26,8 @@ public class ConsertoController {
         repository.save(new Conserto(dados));
     }
     @GetMapping
-    public List<Conserto> listar(){
-        return repository.findAll();
+    public Page<Conserto> listar(Pageable paginacao){
+        return repository.findAll(paginacao);
     }
 
     @GetMapping
