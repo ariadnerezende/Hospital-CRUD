@@ -7,7 +7,7 @@ nome varchar(100) not null,
 anosexperiencia integer not null,
 marca varchar(100) not null,
 modelo varchar(100) not null,
-ano integer not null,
+ano varchar(4) not null,
 
 primary key(id)
 

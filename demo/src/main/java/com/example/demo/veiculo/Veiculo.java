@@ -15,7 +15,7 @@ public class Veiculo {
     @Enumerated(EnumType.STRING)
     private Marca marca;
     private String modelo;
-    private Integer ano;
+    private String ano;
 
     public Veiculo(DadosCadastroVeiculo dados) {
         this.marca = dados.marca();

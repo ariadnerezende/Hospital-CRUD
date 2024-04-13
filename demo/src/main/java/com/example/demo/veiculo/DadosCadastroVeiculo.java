@@ -9,7 +9,7 @@ public record DadosCadastroVeiculo(
         Marca marca,
         @NotBlank
         String modelo,
-        @NotNull
+        @NotBlank
         @Pattern(regexp = "\\d{4}")
-        Integer ano) {
+        String ano) {
 }
