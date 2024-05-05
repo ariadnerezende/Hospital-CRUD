@@ -4,6 +4,7 @@ import com.example.demo.mecanico.Mecanico;
 import com.example.demo.veiculo.Marca;
 
 public record DadosListagemConserto(
+        Long id,
         String dataentrada,
         String datasaida,
         String nome,
@@ -11,7 +12,7 @@ public record DadosListagemConserto(
         String modelo
 ) {
     public DadosListagemConserto(Conserto conserto){
-        this(conserto.getDataentrada(), conserto.getDatasaida(),
+        this(conserto.getId(), conserto.getDataentrada(), conserto.getDatasaida(),
                 conserto.getMecanico().getNome(),
                 conserto.getVeiculo().getMarca(),
                 conserto.getVeiculo().getModelo());
