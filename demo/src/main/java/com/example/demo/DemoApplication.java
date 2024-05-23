@@ -15,5 +15,4 @@ public class DemoApplication {
 		System.out.println(LocalDateTime.now());
 	}
 
-
 }
