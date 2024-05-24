@@ -44,14 +44,15 @@ public class ConsertoController {
     }
 
     @GetMapping
-    public Page<Conserto> listar(Pageable paginacao){
-        return repository.findAll(paginacao);
+    public ResponseEntity listar() {
+        return ResponseEntity.ok(repository.findAll());
     }
 
     @GetMapping
     @RequestMapping("algunsdados")
-    public Page<DadosListagemConserto> listarDadosSelecionados(Pageable paginacao){
-        return repository.findAllByAtivoTrue(paginacao).map(DadosListagemConserto::new);
+    public ResponseEntity listarAlgunsDados(Pageable paginacao) {
+        var pagina = repository.findAllByAtivoTrue(paginacao).map(DadosListagemConserto::new);
+        return ResponseEntity.ok(pagina);
     }
 
     @PutMapping
