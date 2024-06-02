@@ -31,14 +31,9 @@ public class AutenticacaoController {
 
         var token = new UsernamePasswordAuthenticationToken( dados.login(),
                 dados.senha() );
-
         var authentication = authenticationManager.authenticate(token);
-
-        // Criando o token JWT:
         var tokenJWT = tokenService.gerarToken( (Usuario) authentication.getPrincipal() );
 
-        // Criando o DTO DadosTokenJWT a partir do token criado acima,
-        // e devolvendo no corpo da respostas da requisição:
         return ResponseEntity.ok( new DadosTokenJWT(tokenJWT) );
     }
 }

@@ -16,7 +16,7 @@ import java.time.ZoneOffset;
 @Service
 public class PW3TokenService {
 
-    @Value("${pw3.senha.principal.geracao.token}")
+    @Value("${JWT_SECRET:12345678}")
     private String secret;
 
     public String gerarToken(Usuario usuario) {
@@ -39,8 +39,6 @@ public class PW3TokenService {
         }
     }
 
-
-    // Valida o token, e recupera o subject (login) dentro do token:
     public String getSubject(String tokenJWT) {
 
         try {

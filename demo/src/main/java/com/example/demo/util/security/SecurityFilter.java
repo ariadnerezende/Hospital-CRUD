@@ -16,7 +16,6 @@ import java.io.IOException;
 @Component
 public class SecurityFilter extends OncePerRequestFilter {
 
-    // Injetar a classe PW3TokenService aqui:
     @Autowired
     private PW3TokenService pw3tokenservice;
 
